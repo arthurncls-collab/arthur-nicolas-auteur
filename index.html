@@ -4,12 +4,63 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#08090c">
-  <meta name="description" content="Arthur Nicolas, auteur de dark fantasy urbaine et de thriller gothique. Découvrez Requiem, La Saga des Ombres et le podcast Dans l'Ombre des Livres.">
+  <meta name="description" content="Site officiel d'Arthur Nicolas, auteur de dark fantasy urbaine et de thriller gothique. Découvrez Requiem, La Saga des Ombres, ses rencontres et le podcast Dans l'Ombre des Livres.">
+  <meta name="author" content="Arthur Nicolas">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://arthurncls.github.io/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Arthur Nicolas — Auteur">
+  <meta property="og:description" content="Dark fantasy urbaine, thriller gothique, Requiem et Dans l'Ombre des Livres.">
+  <meta property="og:url" content="https://arthurncls.github.io/">
+  <meta property="og:image" content="https://arthurncls.github.io/assets/requiem-cover.jpg">
+  <meta property="og:image:alt" content="Couverture de Requiem d'Arthur Nicolas, illustrée par Emma Calleri">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arthur Nicolas — Auteur">
+  <meta name="twitter:description" content="Dark fantasy urbaine, thriller gothique, Requiem et Dans l'Ombre des Livres.">
+  <meta name="twitter:image" content="https://arthurncls.github.io/assets/requiem-cover.jpg">
   <title>Arthur Nicolas — Auteur</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://arthurncls.github.io/#arthur-nicolas",
+        "name": "Arthur Nicolas",
+        "url": "https://arthurncls.github.io/",
+        "jobTitle": "Auteur",
+        "sameAs": [
+          "https://instagram.com/artncls_auteur",
+          "https://linktr.ee/artncls_auteur"
+        ]
+      },
+      {
+        "@type": "Book",
+        "name": "Requiem",
+        "alternateName": "La Saga des Ombres — Tome I",
+        "isbn": "9798198698017",
+        "datePublished": "2026-07-16",
+        "inLanguage": "fr",
+        "numberOfPages": 374,
+        "genre": ["Dark fantasy urbaine gothique", "Thriller fantastique", "Horreur gothique"],
+        "author": {"@id": "https://arthurncls.github.io/#arthur-nicolas"},
+        "image": "https://arthurncls.github.io/assets/requiem-cover.jpg"
+      },
+      {
+        "@type": "PodcastSeries",
+        "name": "Dans l'Ombre des Livres",
+        "url": "https://open.spotify.com/show/033r9RLPAxfJIBCkVPx3eZ",
+        "author": {"@id": "https://arthurncls.github.io/#arthur-nicolas"}
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -17,9 +68,16 @@
     <a class="brand" href="#accueil"><span class="monogram">AN</span><span>Arthur Nicolas</span></a>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
     <nav id="main-nav" class="nav" aria-label="Navigation principale">
-      <a href="#auteur">Auteur</a><a href="#requiem">Requiem</a><a href="#univers">Univers</a><a href="#podcast">Podcast</a><a href="#contact">Contact</a>
+      <a href="#auteur">Auteur</a>
+      <a href="#requiem">Requiem</a>
+      <a href="#univers">Univers</a>
+      <a href="#rencontres">Rencontres</a>
+      <a href="#podcast">Podcast</a>
+      <a href="#presse">Presse</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
+
   <main>
     <section class="hero" id="accueil">
       <div class="hero-bg" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -27,7 +85,10 @@
         <p class="eyebrow">Auteur · Dark fantasy · Thriller gothique</p>
         <h1>Écrire dans l'ombre.<br><em>Regarder l'humain en face.</em></h1>
         <p class="lead">Des villes malades, des personnages imparfaits et des histoires où le fantastique ne cache jamais la violence du réel : il la révèle.</p>
-        <div class="actions"><a class="button button-light" href="#requiem">Découvrir Requiem</a><a class="button button-line" href="#podcast">Dans l'Ombre des Livres</a></div>
+        <div class="actions">
+          <a class="button button-light" href="#requiem">Découvrir Requiem</a>
+          <a class="button button-line" href="#rencontres">Rencontres & médias</a>
+        </div>
       </div>
       <a class="scroll" href="#auteur">Entrer dans l'univers ↓</a>
     </section>
@@ -37,18 +98,27 @@
       <div class="copy">
         <p class="intro">Auteur et animateur originaire des Alpes-de-Haute-Provence, Arthur Nicolas écrit des récits sombres, visuels et atmosphériques dans lesquels le fantastique révèle des failles humaines très concrètes.</p>
         <p>Deuil, culpabilité, colère, solidarité, pouvoir et mémoire traversent ses textes. Passionné par le cinéma, l'horreur, la photographie et la musique, il construit ses romans comme des espaces où l'ambiance reste indissociable des choix moraux.</p>
-        <p>Après <em>Interpolis</em>, il développe <em>La Saga des Ombres</em>, un cycle de dark fantasy urbaine pensé en quatre volumes.</p>
+        <p>Après <em>Interpolis</em>, il développe <em>La Saga des Ombres</em>, un cycle de dark fantasy urbaine pensé en quatre volumes. Il anime également <em>Dans l'Ombre des Livres</em>, un podcast consacré aux parcours d'auteurs et à la réalité du monde éditorial.</p>
       </div>
     </section>
 
     <section class="section requiem" id="requiem">
-      <figure class="cover-wrap"><img src="assets/requiem-cover.jpg" alt="Couverture de Requiem, tome 1, d’Arthur Nicolas, illustrée par Emma Calleri"><figcaption>Illustration de couverture · Emma Calleri</figcaption></figure>
+      <figure class="cover-wrap">
+        <img src="assets/requiem-cover.jpg" alt="Couverture de Requiem, tome 1, d’Arthur Nicolas, illustrée par Emma Calleri">
+        <figcaption>Illustration de couverture · Emma Calleri</figcaption>
+      </figure>
       <div class="book-copy">
         <p class="eyebrow">La Saga des Ombres · Tome I</p>
         <h2>Requiem</h2>
         <p class="meta">Dark fantasy urbaine gothique · Thriller fantastique adulte</p>
         <p class="logline">Dix ans après le meurtre de ses parents, Thomas Gray, justicier spectral né d'un pacte infernal, enquête avec la journaliste Stella Frost sur des crimes qui relient la pègre, la mairie et les fondations occultes de Ravenscrow.</p>
-        <div class="facts"><span>Environ 94 000 mots</span><span>34 chapitres</span><span>Cycle en quatre volumes</span></div>
+        <div class="facts">
+          <span>Édition révisée · 16 juillet 2026</span>
+          <span>374 pages</span>
+          <span>ISBN 979 8198698017</span>
+          <span>34 chapitres</span>
+          <span>Cycle en quatre volumes</span>
+        </div>
         <details class="synopsis">
           <summary>Lire le synopsis</summary>
           <div>
@@ -63,7 +133,11 @@
     </section>
 
     <section class="section universe" id="univers">
-      <div class="section-head"><p class="eyebrow">La Saga des Ombres</p><h2>Une ville comme une plaie ouverte.</h2><p>Ravenscrow n'est pas un simple décor. Ses rues, ses institutions et ses fantômes agissent sur les personnages autant qu'ils agissent sur elle.</p></div>
+      <div class="section-head">
+        <p class="eyebrow">La Saga des Ombres</p>
+        <h2>Une ville comme une plaie ouverte.</h2>
+        <p>Ravenscrow n'est pas un simple décor. Ses rues, ses institutions et ses fantômes agissent sur les personnages autant qu'ils agissent sur elle.</p>
+      </div>
       <div class="grid">
         <article><span>01</span><h3>Gothique urbain</h3><p>Pluie, verticalité, usines mortes, institutions pourries et ruelles qui semblent absorber ceux qui les traversent.</p></article>
         <article><span>02</span><h3>Horreur intime</h3><p>Le surnaturel ne remplace jamais le traumatisme. Il lui donne un visage, une voix et parfois des ailes.</p></article>
@@ -72,19 +146,84 @@
       </div>
     </section>
 
+    <section class="section encounters" id="rencontres">
+      <div class="section-head encounter-head">
+        <p class="eyebrow">Rencontres & médias</p>
+        <h2>Sortir des pages.</h2>
+        <p>Salons, dédicaces, festivals, interventions et médias : les prochaines dates seront annoncées ici et sur Instagram.</p>
+      </div>
+      <div class="timeline">
+        <article class="timeline-featured">
+          <p class="timeline-kicker">Prochaines dates</p>
+          <h3>En préparation</h3>
+          <p>De nouvelles rencontres autour de <em>Requiem</em> et du travail d'auteur seront ajoutées au fil des confirmations.</p>
+          <a href="https://instagram.com/artncls_auteur" target="_blank" rel="noreferrer">Suivre les annonces →</a>
+        </article>
+        <article>
+          <time datetime="2025-10-02">02.10.2025</time>
+          <h3>BFM DICI</h3>
+          <p>Entretien autour du parcours d'auteur et de l'univers de <em>Ravenscrow</em>.</p>
+        </article>
+        <article>
+          <time datetime="2025-11-08">08–09.11.2025</time>
+          <h3>HeroFestival · Marseille</h3>
+          <p>Présence auteur et rencontre avec le public dans l'univers des cultures de l'imaginaire.</p>
+        </article>
+        <article>
+          <time datetime="2025-11-29">29.11.2025</time>
+          <h3>E.Leclerc · Gap</h3>
+          <p>Séance de dédicace et échanges autour du roman.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="section podcast" id="podcast">
       <div><p class="eyebrow">Podcast</p><h2>Dans l'Ombre<br>des Livres</h2></div>
-      <div class="copy"><p class="intro">La réalité du livre derrière la vitrine.</p><p>Parcours d'auteurs, premiers romans, maisons d'édition, visibilité, argent, galères et coulisses : un podcast qui préfère regarder la fabrication du livre là où elle est rarement racontée.</p>
-        <div class="actions"><a class="button button-light" href="https://open.spotify.com/show/033r9RLPAxfJIBCkVPx3eZ" target="_blank" rel="noreferrer">Écouter sur Spotify</a><a class="button button-line" href="https://linktr.ee/artncls_auteur" target="_blank" rel="noreferrer">Tous les liens</a></div>
+      <div class="copy">
+        <p class="intro">La réalité du livre derrière la vitrine.</p>
+        <p>Parcours d'auteurs, premiers romans, maisons d'édition, visibilité, argent, galères et coulisses : un podcast qui préfère regarder la fabrication du livre là où elle est rarement racontée.</p>
+        <div class="actions">
+          <a class="button button-light" href="https://open.spotify.com/show/033r9RLPAxfJIBCkVPx3eZ" target="_blank" rel="noreferrer">Écouter sur Spotify</a>
+          <a class="button button-line" href="https://linktr.ee/artncls_auteur" target="_blank" rel="noreferrer">Tous les liens</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section press" id="presse">
+      <div class="press-title">
+        <p class="eyebrow">Presse & professionnels</p>
+        <h2>Un espace pour travailler ensemble.</h2>
+      </div>
+      <div class="press-panel">
+        <p class="press-intro">Librairies, salons, médias, podcasts et structures culturelles peuvent contacter directement Arthur Nicolas pour une rencontre, une interview ou une proposition autour de <em>Requiem</em> et de son travail d'auteur.</p>
+        <div class="press-grid">
+          <div><span>01</span><h3>Dossier professionnel</h3><p>Biographie, présentation du roman, synopsis, informations éditoriales et visuels disponibles sur demande.</p></div>
+          <div><span>02</span><h3>Rencontres</h3><p>Dédicaces, tables rondes, interviews, interventions et échanges autour de l'écriture et du monde du livre.</p></div>
+          <div><span>03</span><h3>Contact direct</h3><p>Un point de contact unique pour les demandes presse, librairie, événement et podcast.</p></div>
+        </div>
+        <div class="actions">
+          <a class="button button-light" href="mailto:arthur.ncls@icloud.com?subject=Demande%20professionnelle%20-%20Arthur%20Nicolas">Contacter Arthur Nicolas</a>
+          <a class="button button-line" href="mailto:arthur.ncls@icloud.com?subject=Demande%20de%20dossier%20de%20presse%20-%20Requiem">Demander le dossier de presse</a>
+        </div>
       </div>
     </section>
 
     <section class="section contact" id="contact">
-      <p class="eyebrow">Contact & actualités</p><h2>Continuer la conversation.</h2><p>Édition, presse, podcast, rencontres ou simplement suivre les prochains projets.</p>
-      <div class="contact-links"><a href="mailto:arthur.ncls@icloud.com">arthur.ncls@icloud.com</a><a href="https://instagram.com/artncls_auteur" target="_blank" rel="noreferrer">Instagram · @artncls_auteur</a><a href="https://linktr.ee/artncls_auteur" target="_blank" rel="noreferrer">Tous les liens</a></div>
+      <p class="eyebrow">Contact & actualités</p>
+      <h2>Continuer la conversation.</h2>
+      <p>Édition, presse, podcast, rencontres ou simplement suivre les prochains projets.</p>
+      <div class="contact-links">
+        <a href="mailto:arthur.ncls@icloud.com">arthur.ncls@icloud.com</a>
+        <a href="https://instagram.com/artncls_auteur" target="_blank" rel="noreferrer">Instagram · @artncls_auteur</a>
+        <a href="https://linktr.ee/artncls_auteur" target="_blank" rel="noreferrer">Tous les liens</a>
+      </div>
     </section>
   </main>
-  <footer><span>© <span id="year"></span> Arthur Nicolas</span><span>Écrire l'ombre, préserver l'humain.</span></footer>
+
+  <footer>
+    <span>© <span id="year"></span> Arthur Nicolas</span>
+    <span>Écrire l'ombre, préserver l'humain.</span>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
