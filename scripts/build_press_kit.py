@@ -31,8 +31,8 @@ doc=SimpleDocTemplate(str(OUT),pagesize=A4,rightMargin=18*mm,leftMargin=18*mm,to
 styles=getSampleStyleSheet()
 styles.add(ParagraphStyle(name="Eyebrow",fontName="SansB",fontSize=8,leading=10,textColor=WINE,spaceAfter=7,textTransform="uppercase"))
 styles.add(ParagraphStyle(name="TitleBig",fontName="SerifB",fontSize=34,leading=36,textColor=TEXT,spaceAfter=10))
-styles.add(ParagraphStyle(name="Title",fontName="SerifB",fontSize=24,leading=27,textColor=TEXT,spaceAfter=10))
-styles.add(ParagraphStyle(name="Sub",fontName="Serif",fontSize=14,leading=19,textColor=MUTED,spaceAfter=12))
+styles.add(ParagraphStyle(name="PressTitle",fontName="SerifB",fontSize=24,leading=27,textColor=TEXT,spaceAfter=10))
+styles.add(ParagraphStyle(name="PressSub",fontName="Serif",fontSize=14,leading=19,textColor=MUTED,spaceAfter=12))
 styles.add(ParagraphStyle(name="Body2",fontName="Sans",fontSize=9.6,leading=14,textColor=TEXT,spaceAfter=9))
 styles.add(ParagraphStyle(name="Small2",fontName="Sans",fontSize=8.2,leading=11.5,textColor=MUTED,spaceAfter=6))
 styles.add(ParagraphStyle(name="Quote2",fontName="Serif",fontSize=15,leading=20,textColor=TEXT,leftIndent=10,borderColor=WINE,borderWidth=1.3,borderPadding=8,spaceBefore=8,spaceAfter=14))
@@ -50,7 +50,7 @@ story=[]
 story += [
     Paragraph("KIT PRESSE · 2026",styles["Eyebrow"]),
     Paragraph("Arthur Nicolas",styles["TitleBig"]),
-    Paragraph("Auteur · dark fantasy urbaine · thriller gothique",styles["Sub"])
+    Paragraph("Auteur · dark fantasy urbaine · thriller gothique",styles["PressSub"])
 ]
 cover=Image("assets/requiem-cover.jpg",width=53*mm,height=79*mm)
 author=Image("assets/photos/arthur-author-ravenscrow.jpg",width=78*mm,height=66*mm)
@@ -70,7 +70,7 @@ story += [
 
 story += [
     Paragraph("REQUIEM",styles["Eyebrow"]),
-    Paragraph("La Saga des Ombres · Tome I",styles["Title"]),
+    Paragraph("La Saga des Ombres · Tome I",styles["PressTitle"]),
     Paragraph("Dark fantasy urbaine gothique · thriller fantastique adulte",styles["Sub"]),
 ]
 facts=[
