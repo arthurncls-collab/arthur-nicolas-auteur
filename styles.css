@@ -60,13 +60,13 @@ h1 em{font-weight:500;color:#c9c1c3}
 .grid p{margin:0;color:var(--muted)}
 .encounters{background:linear-gradient(180deg,#090a0d,#0d0e12)}
 .encounter-head{display:grid;grid-template-columns:1fr;gap:0}
-.timeline{margin-top:58px;display:grid;grid-template-columns:1.25fr repeat(3,1fr);border:1px solid var(--line);background:var(--line);gap:1px}
-.timeline article{background:var(--panel);padding:32px;min-height:270px;display:flex;flex-direction:column}
+.timeline{margin-top:58px;display:grid;grid-template-columns:1.25fr repeat(2,1fr);border:1px solid var(--line);background:var(--line);gap:1px}
+.timeline article,.timeline-card{background:var(--panel);padding:32px;min-height:270px;display:flex;flex-direction:column}.timeline-card{text-decoration:none}.timeline-link{transition:.2s}.timeline-link:hover{background:#121319}.timeline-link:hover h3{color:#fff}
 .timeline .timeline-featured{background:radial-gradient(circle at 15% 15%,rgba(114,26,45,.35),transparent 48%),#0d0e12}
 .timeline time,.timeline-kicker{font-size:.68rem;text-transform:uppercase;letter-spacing:.15em;color:#bca5aa;margin:0 0 42px}
 .timeline h3{font-size:2rem;line-height:1;margin-bottom:14px}
 .timeline p{color:var(--muted);margin:0}
-.timeline a{margin-top:auto;padding-top:26px;text-decoration:none;font-size:.82rem;color:#ddd7da}
+.timeline a{margin-top:auto;padding-top:26px;text-decoration:none;font-size:.82rem;color:#ddd7da}.timeline-card .watch-link{margin-top:auto;padding-top:26px;font-size:.82rem;color:#ddd7da}
 .podcast{background:radial-gradient(circle at 90% 50%,rgba(114,26,45,.16),transparent 34%)}
 .press{display:grid;grid-template-columns:.75fr 1.25fr;gap:7vw;background:linear-gradient(135deg,#0a0b0f,#121014)}
 .press-title h2{font-size:clamp(3rem,5.8vw,6.3rem)}
