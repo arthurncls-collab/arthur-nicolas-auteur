@@ -39,14 +39,25 @@ jobs:
           if channel is None:
               raise SystemExit("RSS channel introuvable")
 
+          itunes = "{http://www.itunes.com/dtds/podcast-1.0.dtd}"
+
           def text_of(item, name):
               el = item.find(name)
               return (el.text or "").strip() if el is not None and el.text else ""
 
-          def clean(s, limit=260):
+          def clean(s, limit=240):
               s = html.unescape(re.sub(r"<[^>]+>", " ", s or ""))
               s = re.sub(r"\s+", " ", s).strip()
               return s if len(s) <= limit else s[:limit-1].rstrip() + "…"
+
+          channel_image = ""
+          channel_itunes = channel.find(itunes + "image")
+          if channel_itunes is not None:
+              channel_image = channel_itunes.attrib.get("href","")
+          if not channel_image:
+              image_node = channel.find("image")
+              if image_node is not None:
+                  channel_image = text_of(image_node, "url")
 
           episodes = []
           for item in channel.findall("item")[:8]:
@@ -56,6 +67,8 @@ jobs:
               pub = text_of(item, "pubDate")
               enclosure = item.find("enclosure")
               audio = enclosure.attrib.get("url","") if enclosure is not None else ""
+              image_el = item.find(itunes + "image")
+              image = image_el.attrib.get("href","") if image_el is not None else channel_image
               try:
                   published = parsedate_to_datetime(pub).astimezone(timezone.utc).isoformat()
               except Exception:
@@ -65,6 +78,7 @@ jobs:
                   "description": clean(description),
                   "link": link,
                   "audio": audio,
+                  "image": image,
                   "published": published
               })
 
@@ -87,4 +101,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add podcast-feed.json
           git commit -m "Met à jour le flux RSS du podcast"
-          git push
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
