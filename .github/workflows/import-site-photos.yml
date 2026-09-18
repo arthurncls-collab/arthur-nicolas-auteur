@@ -34,4 +34,5 @@ jobs:
             exit 0
           fi
           git commit -m "Ajoute les photos auteur au site"
+          git pull --rebase origin main
           git push
