@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - ".github/workflows/optimize-media.yml"\n      - "scripts/optimize_media.py"
+      - ".github/workflows/optimize-media.yml"
+      - "scripts/optimize_media.py"
 
 permissions:
   contents: write
@@ -35,4 +36,6 @@ jobs:
             exit 0
           fi
           git commit -m "Optimise les images du site"
-          git push
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
