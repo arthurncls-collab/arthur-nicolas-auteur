@@ -1,0 +1,90 @@
+name: Sync podcast RSS
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+  push:
+    paths:
+      - ".github/workflows/sync-podcast.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch and convert RSS
+        env:
+          RSS_URL: "https://anchor.fm/s/11343344c/podcast/rss"
+        run: |
+          python - <<'PY'
+          import os, json, re, html
+          import urllib.request
+          import xml.etree.ElementTree as ET
+          from email.utils import parsedate_to_datetime
+          from datetime import datetime, timezone
+
+          url = os.environ["RSS_URL"]
+          req = urllib.request.Request(url, headers={"User-Agent":"Mozilla/5.0 ArthurNicolasSite/1.0"})
+          with urllib.request.urlopen(req, timeout=30) as r:
+              raw = r.read()
+
+          root = ET.fromstring(raw)
+          channel = root.find("channel")
+          if channel is None:
+              raise SystemExit("RSS channel introuvable")
+
+          def text_of(item, name):
+              el = item.find(name)
+              return (el.text or "").strip() if el is not None and el.text else ""
+
+          def clean(s, limit=260):
+              s = html.unescape(re.sub(r"<[^>]+>", " ", s or ""))
+              s = re.sub(r"\s+", " ", s).strip()
+              return s if len(s) <= limit else s[:limit-1].rstrip() + "…"
+
+          episodes = []
+          for item in channel.findall("item")[:8]:
+              title = text_of(item, "title")
+              description = text_of(item, "description")
+              link = text_of(item, "link")
+              pub = text_of(item, "pubDate")
+              enclosure = item.find("enclosure")
+              audio = enclosure.attrib.get("url","") if enclosure is not None else ""
+              try:
+                  published = parsedate_to_datetime(pub).astimezone(timezone.utc).isoformat()
+              except Exception:
+                  published = pub
+              episodes.append({
+                  "title": title,
+                  "description": clean(description),
+                  "link": link,
+                  "audio": audio,
+                  "published": published
+              })
+
+          data = {
+              "updated_at": datetime.now(timezone.utc).isoformat(),
+              "episodes": episodes
+          }
+          with open("podcast-feed.json","w",encoding="utf-8") as f:
+              json.dump(data,f,ensure_ascii=False,indent=2)
+              f.write("\n")
+          PY
+
+      - name: Commit feed if changed
+        run: |
+          if git diff --quiet -- podcast-feed.json; then
+            echo "No RSS changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add podcast-feed.json
+          git commit -m "Met à jour le flux RSS du podcast"
+          git push
