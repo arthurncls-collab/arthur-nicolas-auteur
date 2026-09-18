@@ -71,7 +71,7 @@ story += [
 story += [
     Paragraph("REQUIEM",styles["Eyebrow"]),
     Paragraph("La Saga des Ombres · Tome I",styles["PressTitle"]),
-    Paragraph("Dark fantasy urbaine gothique · thriller fantastique adulte",styles["Sub"]),
+    Paragraph("Dark fantasy urbaine gothique · thriller fantastique adulte",styles["PressSub"]),
 ]
 facts=[
     ["Édition","Indépendante révisée · 16 juillet 2026"],
@@ -104,7 +104,7 @@ media_table.setStyle(TableStyle([("ALIGN",(0,0),(-1,-1),"CENTER"),("VALIGN",(0,0
                                  ("LEFTPADDING",(0,0),(-1,-1),0),("RIGHTPADDING",(0,0),(-1,-1),0)]))
 story += [
     Paragraph("MÉDIAS · RENCONTRES · PODCAST",styles["Eyebrow"]),
-    Paragraph("Au-delà des pages",styles["Title"]),
+    Paragraph("Au-delà des pages",styles["PressTitle"]),
     media_table,Spacer(1,7*mm),
     Paragraph("<b>Dans l'Ombre des Livres</b> explore les parcours d'auteurs et la réalité du monde éditorial : publication, rémunération, visibilité, premiers romans, maisons d'édition et coulisses du livre.",styles["Body2"]),
     Paragraph("<b>BFM DICI · 2 octobre 2025</b> — entretien télévisé autour du parcours d'auteur et de l'univers de <i>Ravenscrow</i>.<br/><link href='https://www.dailymotion.com/video/x9rkasw' color='#721a2d'>Voir l'interview sur Dailymotion</link>",styles["Body2"]),
