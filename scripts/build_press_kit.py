@@ -63,7 +63,8 @@ story += [
     Paragraph("Auteur et animateur originaire des Alpes-de-Haute-Provence, Arthur Nicolas écrit des récits sombres, visuels et atmosphériques dans lesquels le fantastique révèle des failles humaines concrètes : deuil, culpabilité, colère, solidarité, pouvoir et mémoire.",styles["Body2"]),
     Paragraph("Passionné par le cinéma, l'horreur, la photographie et la musique, il construit ses romans comme des espaces où l'ambiance reste indissociable des choix moraux. Après <i>Interpolis</i>, publié aux Éditions du Net en 2025, il développe <i>La Saga des Ombres</i>. Il anime également <i>Dans l'Ombre des Livres</i>, un podcast consacré aux parcours d'auteurs et à la réalité du monde éditorial.",styles["Body2"]),
     Spacer(1,2*mm),
-    Paragraph("<b>Contact professionnel</b> · arthur.ncls@icloud.com",styles["Body2"]),
+    Paragraph("<b>Contact auteur & presse</b> · arthur.ncls@icloud.com",styles["Body2"]),
+    Paragraph("<b>Contact podcast</b> · danslombredeslivres@gmail.com",styles["Body2"]),
     Paragraph("Instagram · @artncls_auteur · Site · https://arthurncls.github.io/",styles["Small2"]),
     PageBreak()
 ]
@@ -112,7 +113,8 @@ story += [
     Spacer(1,3*mm),
     Paragraph("POUR LES PROFESSIONNELS",styles["Eyebrow"]),
     Paragraph("Interviews, dédicaces, tables rondes, salons, interventions et échanges autour de l'écriture, de la dark fantasy et de la réalité du monde du livre.",styles["Body2"]),
-    Paragraph("<b>Contact :</b> arthur.ncls@icloud.com",styles["Body2"]),
+    Paragraph("<b>Contact auteur & presse :</b> arthur.ncls@icloud.com",styles["Body2"]),
+    Paragraph("<b>Contact podcast :</b> danslombredeslivres@gmail.com",styles["Body2"]),
     Paragraph("Visuels HD et informations complémentaires : https://arthurncls.github.io/presse.html",styles["Small2"]),
 ]
 
